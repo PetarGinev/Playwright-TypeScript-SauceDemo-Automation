@@ -1,7 +1,7 @@
 import { expect, Page } from "@playwright/test";
 import { ID_USERNAME, ID_PASSWORD, STANDARD_USERNAME, STANDARD_PASSWORD, ID_LOGIN_BTN } from "../helpers/login";
 
-/* TC1: Verify the Login button can be activated using the Enter key.
+/* TC2: Verify the Login button can be activated using the Enter key.
 * Test Steps:
 1. Navigate to the the login page.
 2. Enter valid username in the Username field.
