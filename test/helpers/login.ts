@@ -5,6 +5,7 @@ export const FORM_INPUT_ERROR = "input_error";
 export const FORM_INPUT_ERROR_ICON = ".error_icon";
 export const ERROR_MESSAGE = "Epic sadface: Username and password do not match any user in this service";
 export const USERNAME_ERROR_MESSAGE = "Epic sadface: Username is required";
+export const PASSWORD_ERROR_MESSAGE = "Epic sadface: Password is required";
 
 // Selectors
 export const ID_USERNAME = "#user-name";

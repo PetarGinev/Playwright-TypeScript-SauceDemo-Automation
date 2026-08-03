@@ -26,6 +26,10 @@ test("TC5: Verify login with invalid username and invalid password", async ({pag
     await TC5(page);
 });
 
-test.only("TC6: Verify login with empty username", async ({page}) => {
+test("TC6: Verify login with empty username", async ({page}) => {
+    await TC6(page);
+});
+
+test("TC7: Verify login with empty password", async ({page}) => {
     await TC6(page);
 });
