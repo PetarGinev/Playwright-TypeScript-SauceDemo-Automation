@@ -7,6 +7,7 @@ import TC5 from "./testCases/TC5";
 import TC6 from "./testCases/TC6";
 import TC7 from "./testCases/TC7";
 import TC8 from "./testCases/TC8";
+import TC9 from "./testCases/TC9";
 
 test("TC1: Verify successful login with valid standard_user credentials", async ({page}) => {
     await TC1(page);
@@ -38,4 +39,8 @@ test("TC7: Verify login with empty password", async ({page}) => {
 
 test("TC8: Verify login with both username and password empty", async ({page}) => {
     await TC8(page);
+});
+
+test("TC9: Verify login is case-sensitive for the username", async ({page}) => {
+    await TC9(page);
 });

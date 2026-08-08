@@ -14,3 +14,6 @@ export const ID_LOGIN_BTN = "#login-button";
 export const ERROR_MESSAGE_CONTAINER = "div[class*='error-message-container']";
 
 // Helper functions
+export function capitalizeLoginCredential(str: string): string {
+  return str.split("_").map(word => word.charAt(0).toUpperCase() + word.slice(1)).join("_");
+}
