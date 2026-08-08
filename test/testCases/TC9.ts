@@ -32,7 +32,7 @@ export default async function (page: Page) {
 
     // 2 3
     await page.fill(ID_USERNAME, capitalizeLoginCredential(STANDARD_USERNAME));
-    await page.fill(ID_PASSWORD, `${STANDARD_PASSWORD}`);
+    await page.fill(ID_PASSWORD, STANDARD_PASSWORD);
 
     // 4
     await page.locator(ID_LOGIN_BTN).click();
