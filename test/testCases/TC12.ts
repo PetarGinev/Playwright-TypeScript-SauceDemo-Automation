@@ -34,17 +34,14 @@ export default async function (page: Page) {
 
     // 2
     for (const element of loginElements) {
+        await expect(page.locator(element)).toBeEnabled();
         await expect(page.locator(element)).toBeVisible();
     }
 
     expect(await page.locator(login.LOGIN_LOGO).innerText()).toContain("Swag Labs");
 
-    await expect(page.locator(login.ID_USERNAME)).toBeEnabled();
-    await expect(page.locator(login.ID_PASSWORD)).toBeEnabled();
-
     await expect(page.locator(login.ID_USERNAME)).toHaveAttribute("placeholder", "Username");
     await expect(page.locator(login.ID_PASSWORD)).toHaveAttribute("placeholder", "Password");
-    await expect(page.locator(login.ID_LOGIN_BTN)).toBeEnabled();
 
     for (const username of usernames) {
         await expect(page.locator(login.ACCEPTED_USERNAMES)).toContainText(username);
