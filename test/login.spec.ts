@@ -10,6 +10,7 @@ import TC8 from "./testCases/TC8";
 import TC9 from "./testCases/TC9";
 import TC10 from "./testCases/TC10";
 import TC11 from "./testCases/TC11";
+import TC12 from "./testCases/TC12";
 
 test("TC1: Verify successful login with valid standard_user credentials", async ({page}) => {
     await TC1(page);
@@ -53,4 +54,8 @@ test("TC10: Verify login is case-sensitive for the password", async ({page}) => 
 
 test("TC11: Verify the Password field masks entered characters", async ({page}) => {
     await TC11(page);
+});
+
+test("TC12: Verify that all login page elements are visible", async ({page}) => {
+    await TC12(page);
 });
