@@ -1,3 +1,5 @@
+import { expect, Page } from "@playwright/test";
+
 // Constants
 export const STANDARD_USERNAME = process.env.STANDARD_USERNAME!;
 export const STANDARD_PASSWORD = process.env.STANDARD_PASSWORD!;
@@ -23,8 +25,16 @@ export const ERROR_MESSAGE_CONTAINER = "div[class*='error-message-container']";
 export const LOGIN_CREDENTIALS_CONTAINER = "div[data-test='login-credentials-container']";
 export const ACCEPTED_USERNAMES = "#login_credentials";
 export const ACCEPTED_PASSWORDS = ".login_password";
+export const BURGER_MENU_BUTTON = "#react-burger-menu-btn";
+export const LOGOUT_BUTTON = "#logout_sidebar_link";
 
 // Helper functions
 export function capitalizeLoginCredential(str: string): string {
   return str.split("_").map(word => word.charAt(0).toUpperCase() + word.slice(1)).join("_");
-}
+};
+
+export async function logout(page: Page) {
+  await page.locator(BURGER_MENU_BUTTON).click();
+  await page.locator(LOGOUT_BUTTON).click();
+  await expect(page).toHaveURL("/");
+};
