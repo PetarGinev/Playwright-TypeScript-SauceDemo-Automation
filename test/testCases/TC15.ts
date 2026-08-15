@@ -62,6 +62,7 @@ export default async function (page: Page) {
 
     await page.goto("/");
 
+    // 1-6
     for (const user of loginScenarios) {
         if (isUserLoggedIn) {
             await login.logout(page);
@@ -83,14 +84,7 @@ export default async function (page: Page) {
 
         await expect(page).toHaveURL("/");
 
-        await page.locator(login.ID_USERNAME).fill("");
-        await page.locator(login.ID_PASSWORD).fill("");
-
-        await page.locator(login.ID_USERNAME).fill(login.STANDARD_USERNAME);
-        await page.locator(login.ID_PASSWORD).fill(login.STANDARD_PASSWORD);
-        await page.locator(login.ID_LOGIN_BTN).click();
-
-        await expect(page).toHaveURL(/inventory/);
+        await login.login(page);
         isUserLoggedIn = true;
     }
 };

@@ -1,5 +1,5 @@
 import { expect, Page } from "@playwright/test";
-import { ID_USERNAME, ID_PASSWORD, STANDARD_USERNAME, STANDARD_PASSWORD, ID_LOGIN_BTN, logout } from "../helpers/login";
+import { ID_USERNAME, ID_PASSWORD, login, logout } from "../helpers/login";
 
 /* TC14: Verify the user is redirected to the Login page after logout.
 * Test Steps:
@@ -23,15 +23,8 @@ export default async function (page: Page) {
     // 1
     await page.goto('/');
 
-    // 2 3
-    await page.fill(ID_USERNAME, STANDARD_USERNAME);
-    await page.fill(ID_PASSWORD, STANDARD_PASSWORD);
-
-    // 4
-    await page.locator(ID_LOGIN_BTN).click();
-    await expect(page).toHaveURL(/inventory/);
-
-    // 5
+    // 2 3 4 5
+    await login(page);
     await logout(page);
 
     // 6

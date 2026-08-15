@@ -1,5 +1,5 @@
-import { expect, Page } from "@playwright/test";
-import { ID_USERNAME, ID_PASSWORD, STANDARD_USERNAME, STANDARD_PASSWORD, ID_LOGIN_BTN } from "../helpers/login";
+import { Page } from "@playwright/test";
+import { login } from "../helpers/login";
 
 /* TC1: Verify successful login with valid standard_user credentials.
 * Test Steps:
@@ -19,11 +19,6 @@ export default async function (page: Page) {
     // 1
     await page.goto('/');
 
-    // 2 3
-    await page.fill(ID_USERNAME, STANDARD_USERNAME);
-    await page.fill(ID_PASSWORD, STANDARD_PASSWORD);
-
-    // 4
-    await page.locator(ID_LOGIN_BTN).click();
-    await expect(page).toHaveURL(/inventory/);
+    // 2-4
+    await login(page);
 }

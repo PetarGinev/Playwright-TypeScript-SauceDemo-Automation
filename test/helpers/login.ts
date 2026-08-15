@@ -33,6 +33,13 @@ export function capitalizeLoginCredential(str: string): string {
   return str.split("_").map(word => word.charAt(0).toUpperCase() + word.slice(1)).join("_");
 };
 
+export async function login(page: Page) {
+  await page.fill(ID_USERNAME, STANDARD_USERNAME);
+  await page.fill(ID_PASSWORD, STANDARD_PASSWORD);
+  await page.locator(ID_LOGIN_BTN).click();
+  await expect(page).toHaveURL(/inventory/);
+};
+
 export async function logout(page: Page) {
   await page.locator(BURGER_MENU_BUTTON).click();
   await page.locator(LOGOUT_BUTTON).click();
