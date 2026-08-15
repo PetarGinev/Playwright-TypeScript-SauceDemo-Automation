@@ -13,6 +13,7 @@ import TC11 from "./testCases/TC11";
 import TC12 from "./testCases/TC12";
 import TC13 from "./testCases/TC13";
 import TC14 from "./testCases/TC14";
+import TC15 from "./testCases/TC15";
 
 test("TC1: Verify successful login with valid standard_user credentials", async ({page}) => {
     await TC1(page);
@@ -68,4 +69,8 @@ test("TC13: Verify login behavior for all predefined users", async ({page}) => {
 
 test("TC14: Verify the user is redirected to the Login page after logout", async ({page}) => {
     await TC14(page);
+});
+
+test("TC15: Verify user can successfully log in with correct credentials after an unsuccessful login attempt", async ({page}) => {
+    await TC15(page);
 });
