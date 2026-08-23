@@ -1,4 +1,5 @@
 import { expect, Page } from "@playwright/test";
+import { SHOPPING_CART_CONTAINER } from "../helpers/inventory";
 
 // Constants
 export const STANDARD_USERNAME = process.env.STANDARD_USERNAME!;
@@ -38,6 +39,7 @@ export async function login(page: Page) {
   await page.fill(ID_PASSWORD, STANDARD_PASSWORD);
   await page.locator(ID_LOGIN_BTN).click();
   await expect(page).toHaveURL(/inventory/);
+  await expect(page.locator(SHOPPING_CART_CONTAINER)).toBeVisible();
 };
 
 export async function logout(page: Page) {
