@@ -16,6 +16,7 @@ import TC14 from "./testCases/TC14";
 import TC15 from "./testCases/TC15";
 import TC16 from "./testCases/TC16";
 import TC17 from "./testCases/TC17";
+import TC18 from "./testCases/TC18";
 
 test("TC1: Verify successful login with valid standard_user credentials", async ({page}) => {
     await TC1(page);
@@ -83,4 +84,8 @@ test("TC16: Verify that the authenticated user remains logged in after refreshin
 
 test("TC17: Verify that the user remains logged in when navigating between application pages", async ({page}) => {
     await TC17(page);
+});
+
+test("TC18: Verify direct access to the Inventory page without authentication redirects to the Login page", async ({page}) => {
+    await TC18(page);
 });

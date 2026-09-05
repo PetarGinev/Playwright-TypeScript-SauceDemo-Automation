@@ -3,7 +3,7 @@ import { login } from "../helpers/login";
 import { SHOPPING_CART_CONTAINER, INVENTORY_CONTAINER } from "../helpers/inventory";
 import { CART_CONTENTS_CONTAINER, CONTINUE_SHOPPING_BTN } from "../helpers/cart";
 
-/* TC17: Verify that the user remains logged in when navigating between application pages..
+/* TC17: Verify that the user remains logged in when navigating between application pages.
 * Test Steps:
 1. Navigate to the the login page.
 2. Enter valid username in the Username field.
@@ -13,7 +13,7 @@ import { CART_CONTENTS_CONTAINER, CONTINUE_SHOPPING_BTN } from "../helpers/cart"
 6. Navigate back to the Products page.
 
 * Expected result:
-"1. Login page is displayed.
+1. Login page is displayed.
 2. Username is entered successfully.
 3. Password is entered successfully.
 4. The user is successfully logged in and redirected to the Products page.
