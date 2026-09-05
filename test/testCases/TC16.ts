@@ -1,6 +1,6 @@
 import { expect, Page } from "@playwright/test";
 import { login } from "../helpers/login";
-import { SHOPPING_CART_CONTAINER } from "../helpers/inventory";
+import { INVENTORY_CONTAINER } from "../helpers/inventory";
 
 /* TC16: Verify that the authenticated user remains logged in after refreshing the page.
 * Test Steps:
@@ -28,5 +28,5 @@ export default async function (page: Page) {
     // 5
     await page.reload();
     await expect(page).toHaveURL(/inventory/);
-    await expect(page.locator(SHOPPING_CART_CONTAINER)).toBeVisible();
+    await expect(page.locator(INVENTORY_CONTAINER).first()).toBeVisible();
 }
